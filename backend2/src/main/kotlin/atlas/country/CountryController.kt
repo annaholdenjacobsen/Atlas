@@ -10,6 +10,12 @@ class CountryController(private val countryService: CountryService) {
     @GetMapping
     fun getAll(): List<CountryResponse> = countryService.getAll()
 
+    @GetMapping("/search")
+    fun search(
+        @RequestParam q: String,
+        @RequestParam(defaultValue = "20") limit: Int,
+    ): List<CountryResponse> = countryService.search(q, limit)
+
     @GetMapping("/{id}")
     fun getById(@PathVariable id: Long): CountryResponse = countryService.getById(id)
 
@@ -18,4 +24,3 @@ class CountryController(private val countryService: CountryService) {
     fun create(@RequestBody request: CreateCountryRequest): CountryResponse =
         countryService.create(request)
 }
-

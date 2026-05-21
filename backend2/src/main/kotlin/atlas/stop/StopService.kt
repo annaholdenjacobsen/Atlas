@@ -1,7 +1,7 @@
 package atlas.stop
 
-import com.example.backend2.city.CityRepository
-import com.example.backend2.trip.TripRepository
+import atlas.city.CityRepository
+import atlas.trip.TripRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional

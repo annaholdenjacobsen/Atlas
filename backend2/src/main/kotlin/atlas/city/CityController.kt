@@ -10,6 +10,13 @@ class CityController(private val cityService: CityService) {
     @GetMapping
     fun getAll(): List<CityResponse> = cityService.getAll()
 
+    @GetMapping("/search")
+    fun search(
+        @RequestParam q: String,
+        @RequestParam(required = false) country: String?,
+        @RequestParam(defaultValue = "20") limit: Int,
+    ): List<CityResponse> = cityService.search(q, country, limit)
+
     @GetMapping("/{id}")
     fun getById(@PathVariable id: Long): CityResponse = cityService.getById(id)
 
@@ -18,4 +25,3 @@ class CityController(private val cityService: CityService) {
     fun create(@RequestBody request: CreateCityRequest): CityResponse =
         cityService.create(request)
 }
-

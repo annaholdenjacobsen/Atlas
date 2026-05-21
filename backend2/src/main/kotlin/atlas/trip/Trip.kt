@@ -1,6 +1,6 @@
 package atlas.trip
 
-import com.example.backend2.user.User
+import atlas.user.User
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType

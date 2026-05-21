@@ -1,7 +1,9 @@
 package atlas.stop
 
-import com.example.backend2.city.CityResponse
-import com.example.backend2.trip.TripResponse
+import atlas.city.CityResponse
+import atlas.city.toResponse
+import atlas.trip.TripResponse
+import atlas.trip.toResponse
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -23,7 +25,7 @@ data class StopResponse(
     val createdAt: LocalDateTime,
 )
 
-fun Stop.toResponse() = StopResponse(
+fun Stop.toResponse(): StopResponse = StopResponse(
     id = id,
     trip = trip.toResponse(),
     city = city.toResponse(),

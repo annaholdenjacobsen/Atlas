@@ -1,6 +1,7 @@
 package atlas.trip
 
-import com.example.backend2.user.UserResponse
+import atlas.user.UserResponse
+import atlas.user.toResponse
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -20,7 +21,7 @@ data class TripResponse(
     val createdAt: LocalDateTime,
 )
 
-fun Trip.toResponse() = TripResponse(
+fun Trip.toResponse(): TripResponse = TripResponse(
     id = id,
     user = user.toResponse(),
     name = name,

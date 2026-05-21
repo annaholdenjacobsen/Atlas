@@ -1,7 +1,7 @@
 package atlas.stop
 
-import com.example.backend2.city.City
-import com.example.backend2.trip.Trip
+import atlas.city.City
+import atlas.trip.Trip
 import jakarta.persistence.*
 import java.time.LocalDate
 import java.time.LocalDateTime
