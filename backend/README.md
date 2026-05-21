@@ -1,1 +1,0 @@
-Her kommer det info og plan for backend
