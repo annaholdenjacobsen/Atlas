@@ -2,12 +2,12 @@ package atlas.user
 
 import java.time.LocalDateTime
 
+// email and supabaseUserId are taken from the Supabase JWT – not sent in the request body.
 data class CreateUserRequest(
     val username: String,
     val firstName: String,
     val lastName: String,
     val phoneNumber: String,
-    val email: String,
 )
 
 data class UserResponse(
@@ -29,4 +29,3 @@ fun User.toResponse() = UserResponse(
     email = email,
     createdAt = createdAt,
 )
-

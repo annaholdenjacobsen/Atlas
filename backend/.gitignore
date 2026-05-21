@@ -43,3 +43,6 @@ out/
 .DS_Store
 **/.DS_Store
 
+### Secrets ###
+application-dev.properties
+

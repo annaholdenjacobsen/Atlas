@@ -24,6 +24,10 @@ class User(
     @Column(nullable = false, unique = true)
     val email: String,
 
+    /** UUID from Supabase Auth – null for legacy rows created before JWT auth was added. */
+    @Column(name = "supabase_user_id", unique = true)
+    val supabaseUserId: String? = null,
+
     @Column(name = "created_at", nullable = false, updatable = false)
     val createdAt: LocalDateTime = LocalDateTime.now(),
 )
